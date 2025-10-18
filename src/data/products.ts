@@ -12,6 +12,10 @@ import capBeigeBack from '@/assets/cap-beige-back.png';
 import capBlackFront from '@/assets/cap-black-front.png';
 import capBlackSide from '@/assets/cap-black-side.png';
 import capBlackBack from '@/assets/cap-black-back.png';
+import tshirtNavyBlue from '@/assets/tshirt-navy-blue.png';
+import tshirtBeigeGreen from '@/assets/tshirt-beige-green.png';
+import tshirtBeigeVneck from '@/assets/tshirt-beige-vneck.png';
+import tshirtBeigeLongsleeve from '@/assets/tshirt-beige-longsleeve.png';
 
 export const products: Product[] = [
   // HOODIES
@@ -53,7 +57,7 @@ export const products: Product[] = [
       { name: 'Heather Gray', value: '#9CA3AF' }
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-    images: [cubePaymentGate, cubeGreen1, cubeGreen2, cubeTrustBadge],
+    images: [tshirtNavyBlue, tshirtBeigeGreen, tshirtBeigeVneck, tshirtBeigeLongsleeve],
     featured: true,
     stock: 'in-stock',
     details: {
