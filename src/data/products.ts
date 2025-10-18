@@ -7,6 +7,11 @@ import hoodieGrayGreen from '@/assets/hoodie-gray-green.png';
 import hoodieWhiteBlue from '@/assets/hoodie-white-blue.png';
 import hoodieGrayGreenFront from '@/assets/hoodie-gray-green-front.png';
 import hoodieNavyBlue from '@/assets/hoodie-navy-blue.png';
+import capBeigeFront from '@/assets/cap-beige-front.png';
+import capBeigeBack from '@/assets/cap-beige-back.png';
+import capBlackFront from '@/assets/cap-black-front.png';
+import capBlackSide from '@/assets/cap-black-side.png';
+import capBlackBack from '@/assets/cap-black-back.png';
 
 export const products: Product[] = [
   // HOODIES
@@ -71,7 +76,7 @@ export const products: Product[] = [
       { name: 'Navy Blue', value: '#1E3A8A' }
     ],
     sizes: ['One Size'],
-    images: [cubeGreen2, cubeGreen1, cubeTrustBadge, cubePaymentGate, cubeGreen2],
+    images: [capBlackFront, capBlackBack, capBlackSide, capBeigeFront, capBeigeBack],
     featured: true,
     stock: 'in-stock',
     details: {
