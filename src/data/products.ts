@@ -16,6 +16,11 @@ import tshirtNavyBlue from '@/assets/tshirt-navy-blue.png';
 import tshirtBeigeGreen from '@/assets/tshirt-beige-green.png';
 import tshirtBeigeVneck from '@/assets/tshirt-beige-vneck.png';
 import tshirtBeigeLongsleeve from '@/assets/tshirt-beige-longsleeve.png';
+import sneakerNavyTop from '@/assets/sneaker-navy-top.png';
+import sneakerNavyFront from '@/assets/sneaker-navy-front.png';
+import sneakerNavyBack from '@/assets/sneaker-navy-back.png';
+import sneakerNavySide from '@/assets/sneaker-navy-side.png';
+import sneakerWhiteGreen from '@/assets/sneaker-white-green.png';
 
 export const products: Product[] = [
   // HOODIES
@@ -104,7 +109,7 @@ export const products: Product[] = [
       { name: 'Navy/Silver', value: '#334155' }
     ],
     sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12', 'US 13'],
-    images: [cubeTrustBadge, cubePaymentGate, cubeGreen1, cubeGreen2, cubeTrustBadge, cubeGreen1, cubePaymentGate, cubeGreen2],
+    images: [sneakerNavyTop, sneakerNavyFront, sneakerNavyBack, sneakerNavySide, sneakerWhiteGreen],
     featured: true,
     stock: 'limited',
     details: {
