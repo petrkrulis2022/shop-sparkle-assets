@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ShieldCheck, Wallet, Zap } from 'lucide-react';
 import { categories } from '@/data/products';
+import lifestyleOffice from '@/assets/lifestyle-office.png';
+import lifestyleOutdoor from '@/assets/lifestyle-outdoor.png';
+import lifestylePark from '@/assets/lifestyle-park.png';
+import lifestyleRooftop from '@/assets/lifestyle-rooftop.png';
 
 const Home = () => {
   return (
@@ -109,18 +113,34 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="aspect-square overflow-hidden rounded-lg border bg-muted"
-              >
-                <img
-                  src="/placeholder.svg"
-                  alt={`Lifestyle ${i}`}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            ))}
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyleOffice}
+                alt="CubePay lifestyle - working in modern office"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyleOutdoor}
+                alt="CubePay lifestyle - outdoor activities"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestylePark}
+                alt="CubePay lifestyle - urban living"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyleRooftop}
+                alt="CubePay lifestyle - city rooftop"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
           </div>
         </div>
       </section>
