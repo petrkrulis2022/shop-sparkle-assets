@@ -3,6 +3,10 @@ import cubeGreen1 from '@/assets/cube-green-1.png';
 import cubeGreen2 from '@/assets/cube-green-2.png';
 import cubePaymentGate from '@/assets/cube-payment-gate.png';
 import cubeTrustBadge from '@/assets/cube-trust-badge.png';
+import hoodieGrayGreen from '@/assets/hoodie-gray-green.png';
+import hoodieWhiteBlue from '@/assets/hoodie-white-blue.png';
+import hoodieGrayGreenFront from '@/assets/hoodie-gray-green-front.png';
+import hoodieNavyBlue from '@/assets/hoodie-navy-blue.png';
 
 export const products: Product[] = [
   // HOODIES
@@ -19,7 +23,7 @@ export const products: Product[] = [
       { name: 'Heather Gray', value: '#9CA3AF' }
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    images: [cubeGreen1, cubeGreen2, cubePaymentGate, cubeTrustBadge],
+    images: [hoodieNavyBlue, hoodieGrayGreen, hoodieWhiteBlue, hoodieGrayGreenFront],
     featured: true,
     stock: 'in-stock',
     details: {
