@@ -1,4 +1,8 @@
 import { Product } from '@/types/product';
+import cubeGreen1 from '@/assets/cube-green-1.png';
+import cubeGreen2 from '@/assets/cube-green-2.png';
+import cubePaymentGate from '@/assets/cube-payment-gate.png';
+import cubeTrustBadge from '@/assets/cube-trust-badge.png';
 
 export const products: Product[] = [
   // HOODIES
@@ -15,7 +19,7 @@ export const products: Product[] = [
       { name: 'Heather Gray', value: '#9CA3AF' }
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    images: [cubeGreen1, cubeGreen2, cubePaymentGate, cubeTrustBadge],
     featured: true,
     stock: 'in-stock',
     details: {
@@ -40,7 +44,7 @@ export const products: Product[] = [
       { name: 'Heather Gray', value: '#9CA3AF' }
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    images: [cubePaymentGate, cubeGreen1, cubeGreen2, cubeTrustBadge],
     featured: true,
     stock: 'in-stock',
     details: {
@@ -63,7 +67,7 @@ export const products: Product[] = [
       { name: 'Navy Blue', value: '#1E3A8A' }
     ],
     sizes: ['One Size'],
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    images: [cubeGreen2, cubeGreen1, cubeTrustBadge, cubePaymentGate, cubeGreen2],
     featured: true,
     stock: 'in-stock',
     details: {
@@ -87,7 +91,7 @@ export const products: Product[] = [
       { name: 'Navy/Silver', value: '#334155' }
     ],
     sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12', 'US 13'],
-    images: ['/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg', '/placeholder.svg'],
+    images: [cubeTrustBadge, cubePaymentGate, cubeGreen1, cubeGreen2, cubeTrustBadge, cubeGreen1, cubePaymentGate, cubeGreen2],
     featured: true,
     stock: 'limited',
     details: {
