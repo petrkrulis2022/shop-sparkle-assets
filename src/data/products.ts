@@ -21,6 +21,10 @@ import sneakerNavyFront from '@/assets/sneaker-navy-front.png';
 import sneakerNavyBack from '@/assets/sneaker-navy-back.png';
 import sneakerNavySide from '@/assets/sneaker-navy-side.png';
 import sneakerWhiteGreen from '@/assets/sneaker-white-green.png';
+import sneakerWhiteGreenTop from '@/assets/sneaker-white-green-top.png';
+import sneakerWhiteGreenBack from '@/assets/sneaker-white-green-back.png';
+import sneakerWhiteGreenFront from '@/assets/sneaker-white-green-front.png';
+import sneakerWhiteGreenSide from '@/assets/sneaker-white-green-side.png';
 
 export const products: Product[] = [
   // HOODIES
@@ -109,7 +113,7 @@ export const products: Product[] = [
       { name: 'Navy/Silver', value: '#334155' }
     ],
     sizes: ['US 7', 'US 8', 'US 9', 'US 10', 'US 11', 'US 12', 'US 13'],
-    images: [sneakerNavyTop, sneakerNavyFront, sneakerNavyBack, sneakerNavySide, sneakerWhiteGreen],
+    images: [sneakerNavyTop, sneakerNavyFront, sneakerNavyBack, sneakerNavySide, sneakerWhiteGreen, sneakerWhiteGreenTop, sneakerWhiteGreenBack, sneakerWhiteGreenFront, sneakerWhiteGreenSide],
     featured: true,
     stock: 'limited',
     details: {
