@@ -2,6 +2,10 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ShieldCheck, Wallet, Zap } from 'lucide-react';
 import { categories } from '@/data/products';
+import hoodieNavyBlue from '@/assets/hoodie-navy-blue.png';
+import tshirtNavyBlue from '@/assets/tshirt-navy-blue.png';
+import capBlackFront from '@/assets/cap-black-front.png';
+import sneakerWhiteGreen from '@/assets/sneaker-white-green.png';
 import lifestyleOffice from '@/assets/lifestyle-office.png';
 import lifestyleOutdoor from '@/assets/lifestyle-outdoor.png';
 import lifestylePark from '@/assets/lifestyle-park.png';
@@ -51,20 +55,34 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((category) => (
-              <Link
-                key={category.id}
-                to={`/shop?category=${category.id}`}
-                className="group relative aspect-square overflow-hidden rounded-lg border bg-muted transition-all hover:shadow-lg"
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-2xl font-bold text-white group-hover:scale-110 transition-transform">
-                    {category.name}
-                  </h3>
-                </div>
-              </Link>
-            ))}
+            {categories.map((category) => {
+              const categoryImages: Record<string, string> = {
+                hoodies: hoodieNavyBlue,
+                tshirts: tshirtNavyBlue,
+                caps: capBlackFront,
+                sneakers: sneakerWhiteGreen
+              };
+              
+              return (
+                <Link
+                  key={category.id}
+                  to={`/shop?category=${category.id}`}
+                  className="group relative aspect-square overflow-hidden rounded-lg border bg-muted transition-all hover:shadow-lg"
+                >
+                  <img
+                    src={categoryImages[category.id]}
+                    alt={`${category.name} category`}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <h3 className="text-2xl font-bold text-white group-hover:scale-110 transition-transform">
+                      {category.name}
+                    </h3>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
