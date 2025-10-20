@@ -6,6 +6,13 @@ import lifestyleOffice from '@/assets/lifestyle-office.png';
 import lifestyleOutdoor from '@/assets/lifestyle-outdoor.png';
 import lifestylePark from '@/assets/lifestyle-park.png';
 import lifestyleRooftop from '@/assets/lifestyle-rooftop.png';
+import lifestyle1 from '@/assets/lifestyle-1.png';
+import lifestyle2 from '@/assets/lifestyle-2.png';
+import lifestyle3 from '@/assets/lifestyle-3.png';
+import lifestyle4 from '@/assets/lifestyle-4.png';
+import lifestyle5 from '@/assets/lifestyle-5.png';
+import lifestyle6 from '@/assets/lifestyle-6.png';
+import lifestyle7 from '@/assets/lifestyle-7.png';
 
 const Home = () => {
   return (
@@ -138,6 +145,55 @@ const Home = () => {
               <img
                 src={lifestyleRooftop}
                 alt="CubePay lifestyle - city rooftop"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyle1}
+                alt="CubePay lifestyle - urban explorer"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyle2}
+                alt="CubePay lifestyle - street style"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyle3}
+                alt="CubePay lifestyle - modern living"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyle4}
+                alt="CubePay lifestyle - urban fashion"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyle5}
+                alt="CubePay lifestyle - city adventures"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyle6}
+                alt="CubePay lifestyle - contemporary style"
+                className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-square overflow-hidden rounded-lg border bg-muted">
+              <img
+                src={lifestyle7}
+                alt="CubePay lifestyle - digital nomad"
                 className="h-full w-full object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
