@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useCartStore } from '@/stores/cartStore';
 import { useState } from 'react';
+import cubePayLogo from '@/assets/cubepay-logo.png';
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded bg-primary" />
+            <img src={cubePayLogo} alt="CubePay Logo" className="h-8 w-8" />
             <span className="text-xl font-bold">CubePay Merch</span>
           </Link>
 
