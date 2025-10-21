@@ -1,6 +1,8 @@
 import { formatCurrency } from '@/utils/currency';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import payButton from '@/assets/pay-with-cubepay-button.png';
+import trustBadge from '@/assets/cubepay-trust-badge-circle.png';
 
 interface OrderSummaryProps {
   subtotal: number;
@@ -59,9 +61,27 @@ export const OrderSummary = ({
 
       {showCheckout && (
         <>
-          <Button size="lg" className="w-full" onClick={onCheckout}>
-            {checkoutLabel}
-          </Button>
+          <button 
+            onClick={onCheckout}
+            className="w-full transition-transform hover:scale-105 active:scale-95"
+          >
+            <img 
+              src={payButton} 
+              alt="Pay with CubePay" 
+              className="w-full h-auto"
+            />
+          </button>
+          
+          <div className="flex items-center justify-center gap-2 py-2">
+            <img 
+              src={trustBadge} 
+              alt="Secured by CubePay" 
+              className="h-12 w-12"
+            />
+            <span className="text-xs text-muted-foreground">
+              Secured by CubePay Gate
+            </span>
+          </div>
           
           <Button variant="outline" size="sm" className="w-full">
             Continue Shopping
