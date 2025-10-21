@@ -4,7 +4,7 @@ import { CartItem } from '@/components/cart/CartItem';
 import { OrderSummary } from '@/components/cart/OrderSummary';
 import { Button } from '@/components/ui/button';
 import { ShoppingBag } from 'lucide-react';
-import paymentGate from '@/assets/cubepay-payment-gate-full.png';
+import paymentBanner from '@/assets/cubepay-payment-banner.png';
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -34,13 +34,17 @@ const Cart = () => {
   return (
     <div className="min-h-screen">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold">Shopping Cart</h1>
-          <img 
-            src={paymentGate} 
-            alt="CubePay Payment Gate" 
-            className="h-16 hidden md:block"
-          />
+        <div className="relative mb-8 overflow-hidden rounded-xl">
+          <div className="flex items-center gap-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 p-6">
+            <h1 className="text-3xl md:text-4xl font-bold text-white z-10 relative">Shopping Cart</h1>
+            <div className="flex-1 hidden md:block">
+              <img 
+                src={paymentBanner} 
+                alt="CubePay Payment Gate" 
+                className="w-full h-24 object-cover object-left"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
