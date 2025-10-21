@@ -1,8 +1,8 @@
 import { formatCurrency } from '@/utils/currency';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import payButton from '@/assets/pay-with-cubepay-button.png';
 import trustBadge from '@/assets/cubepay-trust-badge-circle.png';
+import cubePayLogo from '@/assets/cubepay-logo.png';
 
 interface OrderSummaryProps {
   subtotal: number;
@@ -63,12 +63,21 @@ export const OrderSummary = ({
         <>
           <button 
             onClick={onCheckout}
-            className="w-full transition-transform hover:scale-105 active:scale-95"
+            className="w-full py-4 px-8 rounded-full font-semibold text-lg text-white transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl relative overflow-hidden group"
+            style={{
+              background: 'linear-gradient(135deg, hsl(var(--cubepay-green-glow)) 0%, hsl(var(--cubepay-green)) 50%, hsl(var(--cubepay-green-light)) 100%)',
+              boxShadow: '0 8px 32px hsla(var(--cubepay-green), 0.4), inset 0 1px 0 hsla(0, 0%, 100%, 0.3)',
+            }}
           >
             <img 
-              src={payButton} 
-              alt="Pay with CubePay" 
-              className="w-full h-auto"
+              src={cubePayLogo} 
+              alt="CubePay Logo" 
+              className="h-8 w-8"
+            />
+            <span className="relative z-10">Pay with CubePay</span>
+            <div 
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
+              style={{ transform: 'skewX(-20deg)' }}
             />
           </button>
           

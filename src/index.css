@@ -33,6 +33,11 @@ All colors MUST be HSL.
     --success: 120 100% 33%; /* Green #00AA00 */
     --success-foreground: 0 0% 100%;
 
+    /* CubePay Green Theme */
+    --cubepay-green: 105 85% 50%; /* Vibrant lime green */
+    --cubepay-green-light: 105 85% 65%; /* Lighter green */
+    --cubepay-green-glow: 105 100% 40%; /* Glow effect */
+
     --destructive: 0 100% 50%; /* Red #FF0000 */
     --destructive-foreground: 0 0% 100%;
 
@@ -86,6 +91,11 @@ All colors MUST be HSL.
 
     --success: 120 100% 33%;
     --success-foreground: 0 0% 100%;
+
+    /* CubePay Green Theme */
+    --cubepay-green: 105 85% 50%;
+    --cubepay-green-light: 105 85% 65%;
+    --cubepay-green-glow: 105 100% 40%;
 
     --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
