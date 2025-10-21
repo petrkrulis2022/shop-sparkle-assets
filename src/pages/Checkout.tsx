@@ -10,6 +10,8 @@ import { Separator } from '@/components/ui/separator';
 import { ShippingAddress } from '@/types/order';
 import { Info } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import trustBadge from '@/assets/cube-trust-badge.png';
+import cubePayLogo from '@/assets/cubepay-logo.png';
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -55,7 +57,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-muted/30">
+    <div className="min-h-screen bg-muted/30 relative">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">Checkout</h1>
 
@@ -166,9 +168,25 @@ const Checkout = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
-                    Continue to Payment
-                  </Button>
+                  <button 
+                    type="submit"
+                    className="w-full py-4 px-8 rounded-full font-semibold text-lg text-white transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl relative overflow-hidden group"
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(var(--cubepay-green-glow)) 0%, hsl(var(--cubepay-green)) 50%, hsl(var(--cubepay-green-light)) 100%)',
+                      boxShadow: '0 8px 32px hsla(var(--cubepay-green), 0.4), inset 0 1px 0 hsla(0, 0%, 100%, 0.3)',
+                    }}
+                  >
+                    <img 
+                      src={cubePayLogo} 
+                      alt="CubePay Logo" 
+                      className="h-6 w-6"
+                    />
+                    <span className="relative z-10">Continue to Payment</span>
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
+                      style={{ transform: 'skewX(-20deg)' }}
+                    />
+                  </button>
                 </form>
               ) : (
                 <div className="space-y-2 text-sm">
@@ -319,6 +337,15 @@ const Checkout = () => {
             />
           </div>
         </div>
+      </div>
+
+      {/* Secured by CubePay Badge - Bottom Right */}
+      <div className="fixed bottom-8 right-8 z-50 hidden lg:block">
+        <img 
+          src={trustBadge} 
+          alt="Secured by CubePay Gate" 
+          className="h-32 w-32 drop-shadow-2xl animate-fade-in"
+        />
       </div>
     </div>
   );
