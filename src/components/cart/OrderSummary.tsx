@@ -81,13 +81,13 @@ export const OrderSummary = ({
             />
           </button>
           
-          <div className="flex items-center justify-center gap-2 py-2">
+          <div className="flex items-center justify-center gap-3 py-4 bg-muted/30 rounded-lg">
             <img 
               src={trustBadge} 
               alt="Secured by CubePay" 
-              className="h-12 w-12"
+              className="h-16 w-16"
             />
-            <span className="text-xs text-muted-foreground">
+            <span className="text-sm font-medium text-foreground">
               Secured by CubePay Gate
             </span>
           </div>
