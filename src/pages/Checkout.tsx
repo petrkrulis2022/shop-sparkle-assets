@@ -12,6 +12,7 @@ import { Info } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import trustBadge from "@/assets/cube-trust-badge.png";
 import cubePayLogo from "@/assets/cubepay-logo.png";
+import { createPaymentSession } from "@/services/paymentSessionService";
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -22,9 +23,10 @@ const Checkout = () => {
   const total = useCartStore((state) => state.getTotal());
 
   const [step, setStep] = useState<"shipping" | "payment" | "review">(
-    "shipping"
+    "shipping",
   );
   const [paymentMethod, setPaymentMethod] = useState("cubepay");
+  const [isProcessing, setIsProcessing] = useState(false);
   const [shippingAddress, setShippingAddress] = useState<ShippingAddress>({
     fullName: "",
     email: "",
@@ -52,19 +54,42 @@ const Checkout = () => {
     setStep("review");
   };
 
-  const handlePlaceOrder = () => {
-    // Generate order ID and redirect to AR Viewer virtual terminal
-    const orderId =
-      "ORD-" + Math.random().toString(36).substr(2, 9).toUpperCase();
-    const returnUrl = encodeURIComponent(
-      "http://localhost:5175/order-confirmation"
-    );
-    const merchantName = encodeURIComponent("CubePay Merch");
+  const handlePlaceOrder = async () => {
+    try {
+      setIsProcessing(true);
 
-    // Redirect to AR Viewer virtual terminal with payment details
-    window.location.href = `http://localhost:5173/virtual-terminal?orderId=${orderId}&amount=${total.toFixed(
-      2
-    )}&merchant=${merchantName}&currency=USD&returnUrl=${returnUrl}&type=eshop`;
+      // Generate order ID
+      const orderId =
+        "ORD-" + Math.random().toString(36).substr(2, 9).toUpperCase();
+
+      // Prepare payment data
+      const paymentData = {
+        orderId,
+        amount: total,
+        currency: "USD",
+        items: items.map((item) => ({
+          productId: item.productId,
+          name: item.name,
+          quantity: item.quantity,
+          price: item.price,
+          image: item.image,
+          color: item.color,
+          size: item.size,
+        })),
+        merchantName: "CubePay Merch",
+        redirectUrl: `http://localhost:5175/order-confirmation?order_id=${orderId}`,
+      };
+
+      // Encode payment data
+      const encodedData = btoa(JSON.stringify(paymentData));
+
+      // Redirect to payment redirect page
+      window.location.href = `http://localhost:5176/ar-view?filter=myPaymentTerminals&data=${encodedData}`;
+    } catch (error) {
+      console.error("Failed to create payment:", error);
+      alert("Failed to process order. Please try again.");
+      setIsProcessing(false);
+    }
   };
 
   return (
@@ -391,8 +416,9 @@ const Checkout = () => {
                     size="lg"
                     className="w-full"
                     onClick={handlePlaceOrder}
+                    disabled={isProcessing}
                   >
-                    Place Order
+                    {isProcessing ? "Processing..." : "Place Order"}
                   </Button>
                 </div>
               </div>

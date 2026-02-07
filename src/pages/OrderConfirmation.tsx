@@ -1,12 +1,12 @@
-import { useSearchParams, Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { CheckCircle, Package, Mail } from 'lucide-react';
-import { formatCurrency } from '@/utils/currency';
-import { useCartStore } from '@/stores/cartStore';
+import { useSearchParams, Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, Package, Mail } from "lucide-react";
+import { formatCurrency } from "@/utils/currency";
+import { useCartStore } from "@/stores/cartStore";
 
 const OrderConfirmation = () => {
   const [searchParams] = useSearchParams();
-  const orderId = searchParams.get('order_id');
+  const orderId = searchParams.get("order_id");
   const total = useCartStore((state) => state.getTotal());
 
   return (
@@ -34,10 +34,10 @@ const OrderConfirmation = () => {
               <div>
                 <p className="text-sm text-muted-foreground">Order Date</p>
                 <p className="font-semibold">
-                  {new Date().toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
+                  {new Date().toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
                   })}
                 </p>
               </div>
@@ -70,10 +70,12 @@ const OrderConfirmation = () => {
               <Package className="h-5 w-5 text-primary" />
               <h2 className="text-lg font-semibold">Shipping Information</h2>
             </div>
-            
+
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Estimated Delivery:</span>
+                <span className="text-muted-foreground">
+                  Estimated Delivery:
+                </span>
                 <span className="font-medium">5-7 business days</span>
               </div>
               <div className="flex justify-between">
@@ -96,7 +98,7 @@ const OrderConfirmation = () => {
           {/* Additional Info */}
           <div className="text-center text-sm text-muted-foreground">
             <p>
-              Questions about your order?{' '}
+              Questions about your order?{" "}
               <Link to="/contact" className="text-primary hover:underline">
                 Contact us
               </Link>
